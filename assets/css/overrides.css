@@ -1,4 +1,16 @@
-/* Site-wide overrides for Trophy Air */
+/* =============================================================================
+   Trophy Air - Site-Wide CSS Overrides
+   =============================================================================
+   This file contains customizations on top of the ZeroFour template.
+   Organized by:
+   1. Global Overrides
+   2. Shared Component Styles
+   3. Page-Specific Styles
+   ============================================================================= */
+
+/* =============================================================================
+   1. GLOBAL OVERRIDES
+   ============================================================================= */
 
 #header-wrapper {
 	padding: 0.75em 0 1.5em 0;
@@ -15,6 +27,85 @@
 		padding-left: 1.25em !important;
 		padding-right: 1.25em !important;
 	}
+}
+
+/* =============================================================================
+   2. SHARED COMPONENT STYLES
+   ============================================================================= */
+
+/* ============================================
+   Section Intro - Shared gradient banner
+   Used on services, quality, history, employment, contact pages
+   ============================================ */
+.section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+/* ============================================
+   Base Card Styles - Shared across page types
+   Used by service-card, quality-card, employment-card, etc.
+   ============================================ */
+.service-card,
+.quality-card,
+.employment-card,
+.resource-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.quality-card:hover,
+.employment-card:hover,
+.resource-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+.service-card h3,
+.quality-card h3,
+.employment-card h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
+.service-card p,
+.quality-card p,
+.employment-card p {
+	color: #555;
+	line-height: 1.7;
+}
+
+.service-card ul,
+.quality-card ul,
+.employment-card ul {
+	margin: 0.75em 0;
+	padding-left: 1.5em;
+}
+
+.service-card ul li,
+.quality-card ul li,
+.employment-card ul li {
+	color: #555;
+	margin: 0.5em 0;
+	line-height: 1.6;
 }
 
 /* ============================================
@@ -562,46 +653,13 @@ body.resources-page .contact-button-text-short {
 
 /* ============================================
    Services Page Specific Styles
-   Service cards with color coding and hover effects
+   Color variations for different service categories
+   (Base card styles defined in shared component section)
    ============================================ */
-body.services-page .section-intro {
-	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
-	color: #fff;
-	padding: 2em;
-	border-radius: 8px;
-	margin-bottom: 2em;
-	text-align: center;
-}
-
-body.services-page .section-intro p {
-	color: #fff;
-	margin: 0;
-	font-size: 1.1em;
-}
-
-body.services-page .service-card {
-	background: #fff;
-	border-radius: 8px;
-	padding: 2em;
-	margin-bottom: 2em;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-	border-left: 4px solid #4a9ccf;
-	transition: all 0.3s ease;
-}
-
-body.services-page .service-card:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-	border-left-width: 6px;
-}
-
 body.services-page .service-card h3 {
-	color: #4a9ccf;
-	margin-top: 0;
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
-	font-size: 1.5em;
 }
 
 body.services-page .service-card h4 {
@@ -611,23 +669,8 @@ body.services-page .service-card h4 {
 }
 
 body.services-page .service-card p {
-	color: #555;
 	margin: 0.5em 0;
-	line-height: 1.7;
 }
-
-body.services-page .service-card ul {
-	margin: 0.75em 0;
-	padding-left: 1.5em;
-}
-
-body.services-page .service-card ul li {
-	color: #555;
-	margin: 0.5em 0;
-	line-height: 1.6;
-}
-
-/* Color variations for different service categories */
 body.services-page .service-card.heating {
 	border-left-color: #e74c3c;
 }
@@ -662,62 +705,15 @@ body.services-page .service-card.installation h3 {
 
 /* ============================================
    Quality Page Specific Styles
-   Feature cards highlighting why to choose Choice Services
+   (Base card styles defined in shared component section)
    ============================================ */
-body.quality-page .section-intro {
-	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
-	color: #fff;
-	padding: 2em;
-	border-radius: 8px;
-	margin-bottom: 2em;
-	text-align: center;
-}
-
-body.quality-page .section-intro p {
-	color: #fff;
-	margin: 0;
-	font-size: 1.1em;
-}
-
-body.quality-page .quality-card {
-	background: #fff;
-	border-radius: 8px;
-	padding: 2em;
-	margin-bottom: 2em;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-	border-left: 4px solid #4a9ccf;
-	transition: all 0.3s ease;
-}
-
-body.quality-page .quality-card:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-	border-left-width: 6px;
-}
-
 body.quality-page .quality-card h3 {
-	color: #4a9ccf;
-	margin-top: 0;
-	font-size: 1.5em;
 	margin-bottom: 0.5em;
 }
 
 body.quality-page .quality-card > p {
-	color: #555;
 	margin: 0.5em 0 1em 0;
-	line-height: 1.7;
 	font-size: 1.05em;
-}
-
-body.quality-page .quality-card ul {
-	margin: 0.75em 0;
-	padding-left: 1.5em;
-}
-
-body.quality-page .quality-card ul li {
-	color: #555;
-	margin: 0.5em 0;
-	line-height: 1.6;
 }
 
 body.quality-page .quality-card ul li strong {
@@ -778,18 +774,7 @@ body.quality-page .quality-card.comprehensive h3 {
    Timeline layout with milestone cards
    ============================================ */
 body.history-page .section-intro {
-	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
-	color: #fff;
-	padding: 2em;
-	border-radius: 8px;
 	margin-bottom: 3em;
-	text-align: center;
-}
-
-body.history-page .section-intro p {
-	color: #fff;
-	margin: 0;
-	font-size: 1.1em;
 }
 
 body.history-page .timeline-item {
@@ -968,45 +953,8 @@ body.history-page .timeline-item.today .timeline-content h3 {
 
 /* ============================================
    Employment Page Specific Styles
-   Cards for careers and application information
+   (Base card styles defined in shared component section)
    ============================================ */
-body.employment-page .section-intro {
-	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
-	color: #fff;
-	padding: 2em;
-	border-radius: 8px;
-	margin-bottom: 2em;
-	text-align: center;
-}
-
-body.employment-page .section-intro p {
-	color: #fff;
-	margin: 0;
-	font-size: 1.1em;
-}
-
-body.employment-page .employment-card {
-	background: #fff;
-	border-radius: 8px;
-	padding: 2em;
-	margin-bottom: 2em;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-	border-left: 4px solid #4a9ccf;
-	transition: all 0.3s ease;
-}
-
-body.employment-page .employment-card:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-	border-left-width: 6px;
-}
-
-body.employment-page .employment-card h3 {
-	color: #4a9ccf;
-	margin-top: 0;
-	font-size: 1.5em;
-}
-
 body.employment-page .employment-card h4 {
 	color: #333;
 	margin: 1.5em 0 0.75em 0;
@@ -1014,20 +962,7 @@ body.employment-page .employment-card h4 {
 }
 
 body.employment-page .employment-card > p {
-	color: #555;
 	margin: 0.5em 0 1em 0;
-	line-height: 1.7;
-}
-
-body.employment-page .employment-card ul {
-	margin: 0.75em 0;
-	padding-left: 1.5em;
-}
-
-body.employment-page .employment-card ul li {
-	color: #555;
-	margin: 0.5em 0;
-	line-height: 1.6;
 }
 
 body.employment-page .employment-card ul li strong {
@@ -1113,20 +1048,6 @@ body.employment-page .contact-card .contact-email .button:hover {
    Contact Page Specific Styles
    Regional contact cards and services overview
    ============================================ */
-body.contact-page .section-intro {
-	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
-	color: #fff;
-	padding: 2em;
-	border-radius: 8px;
-	margin-bottom: 2em;
-	text-align: center;
-}
-
-body.contact-page .section-intro p {
-	color: #fff;
-	margin: 0;
-	font-size: 1.1em;
-}
 
 body.contact-page .contact-regions-grid {
 	display: grid;

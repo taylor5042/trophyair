@@ -1,0 +1,1574 @@
+/* Site-wide overrides for Trophy Air */
+
+#header-wrapper {
+	padding: 0.75em 0 1.5em 0;
+}
+
+/* Remove textured overlay from images */
+.image:before {
+	display: none !important;
+}
+
+/* Reduce horizontal padding for the homepage Feature 1 grid on small screens */
+@media screen and (max-width: 736px) {
+	.wrapper.style1 .box.feature1 {
+		padding-left: 1.25em !important;
+		padding-right: 1.25em !important;
+	}
+}
+
+/* ============================================
+   Hero Background System
+   Used across multiple pages for banner/header backgrounds
+   ============================================ */
+.hero-background #header-wrapper {
+	position: relative;
+	z-index: 1000;
+}
+
+.hero-background #header-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center;
+	filter: blur(3px);
+	opacity: 0.35;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.hero-background #header-wrapper .container {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-background #main-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+/* ============================================
+   Page Header Styling
+   Flexbox layout for page headers with featured images
+   ============================================ */
+header.major {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	flex-wrap: wrap;
+}
+
+header.major > div:first-child {
+	flex: 1;
+	min-width: 300px;
+}
+
+.header-image-container {
+	flex: 0 0 400px;
+	min-width: 250px;
+}
+
+.header-image {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media screen and (max-width: 736px) {
+	header.major {
+		flex-direction: column;
+	}
+	
+	header.major > div:first-child {
+		flex: 1 1 100%;
+		min-width: 100%;
+	}
+	
+	.header-image-container {
+		flex: 1 1 100%;
+		min-width: 100%;
+	}
+	
+	.header-image {
+		height: 180px;
+	}
+}
+
+/* ============================================
+   Page Header Image Styling
+   Flexbox layout for page headers with featured images
+   ============================================ */
+.header-image-container {
+	flex: 0 0 400px;
+	min-width: 250px;
+}
+
+/* ============================================
+   Footer Copyright Layout
+   Responsive 3-column layout that stacks on mobile
+   ============================================ */
+#copyright {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 2em;
+	padding: 2em 0;
+}
+
+@media screen and (max-width: 980px) {
+	#copyright {
+		flex-direction: column !important;
+		text-align: center !important;
+	}
+	#copyright > div {
+		text-align: center !important;
+		flex: none !important;
+	}
+}
+
+/* ============================================
+   Page-Specific Hero Backgrounds
+   Each page sets its background via inline style or class
+   ============================================ */
+body.homepage #header-wrapper::before {
+	background-image: url('../../images/site_images/hero-home.jpg');
+}
+
+body.services-page #header-wrapper::before {
+	background-image: url('../../images/site_images/hero-services.jpg');
+}
+
+body.about-page #header-wrapper::before {
+	background-image: url('../../images/site_images/hero-about.jpg');
+}
+
+body.contact-page #header-wrapper::before {
+	background-image: url('../../images/site_images/hero-contact.jpg');
+}
+
+/* ============================================
+   About Page Section Colors
+   Gray and pewter tones for professional look
+   ============================================ */
+body.about-page .service-card.about-dave {
+	border-left-color: #708090;
+}
+
+body.about-page .service-card.about-dave h3 {
+	color: #708090;
+}
+
+body.about-page .service-card.about-values {
+	border-left-color: #5a6a7a;
+}
+
+body.about-page .service-card.about-values h3 {
+	color: #5a6a7a;
+}
+
+body.about-page .service-card.about-services {
+	border-left-color: #2c3e50;
+}
+
+body.about-page .service-card.about-services h3 {
+	color: #2c3e50;
+}
+
+body.about-page .service-card.about-reviews {
+	border-left-color: #7f8c8d;
+}
+
+body.about-page .service-card.about-reviews h3 {
+	color: #7f8c8d;
+}
+
+body.about-page .service-card.about-reviews blockquote {
+	border-left-color: #7f8c8d !important;
+}
+
+/* ============================================
+   Homepage Service Icon Colors
+   Color-coded icons for heating, cooling, fireplaces
+   ============================================ */
+body.homepage header.second.icon.fa-fire::before {
+	color: #e74c3c;
+}
+
+body.homepage header.second.icon.fa-snowflake::before {
+	color: #3498db;
+}
+
+body.homepage header.second.icon.fa-fire-alt::before {
+	color: #f39c12;
+}
+
+/* ============================================
+   Homepage Specific Styles
+   Banner card layout and Feature 1 adjustments
+   ============================================ */
+body.homepage #banner {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	align-items: stretch;
+	padding: 1.25em 0 2.5em 0 !important;
+}
+
+body.homepage .banner-card {
+	flex: 1 1 280px;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 2em;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+body.homepage .banner-card h2 {
+	margin-bottom: 0.75em;
+}
+
+body.homepage #banner:before,
+body.homepage #banner:after {
+	display: none !important;
+}
+
+body.homepage #banner h2 {
+	border: 0 !important;
+}
+
+body.homepage #banner h2:before,
+body.homepage #banner h2:after {
+	display: none !important;
+}
+
+body.homepage .banner-card .button {
+	margin-top: auto;
+}
+
+body.homepage #main-wrapper .wrapper.style1 {
+	padding: 3em 0 !important;
+}
+
+body.homepage .commitment-statement {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	border-radius: 8px;
+	padding: 2.5em 3em;
+	margin-top: 2em;
+	text-align: center;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body.homepage .commitment-statement .lead-text {
+	color: #fff;
+	font-size: 1.3em;
+	line-height: 1.6;
+	margin: 0 0 1.5em 0;
+	font-weight: 400;
+	text-shadow: none;
+}
+
+body.homepage .commitment-statement .services-list {
+	color: #fff;
+	font-size: 1.1em;
+	margin: 0 0 1em 0;
+	font-weight: 600;
+	text-shadow: none;
+}
+
+body.homepage .commitment-statement .inline-services {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em 2em;
+}
+
+body.homepage .commitment-statement .inline-services li {
+	color: #fff;
+	font-size: 1em;
+	padding: 0.5em 1.2em;
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	text-shadow: none;
+}
+
+body.homepage .commitment-statement .inline-services li:hover {
+	background: rgba(255, 255, 255, 0.25);
+	transform: translateY(-2px);
+}
+
+@media screen and (max-width: 736px) {
+	body.homepage .commitment-statement {
+		padding: 2em 1.5em;
+	}
+	
+	body.homepage .commitment-statement .lead-text {
+		font-size: 1.1em;
+	}
+	
+	body.homepage .commitment-statement .services-list {
+		font-size: 1em;
+	}
+	
+	body.homepage .commitment-statement .inline-services {
+		gap: 0.75em;
+	}
+	
+	body.homepage .commitment-statement .inline-services li {
+		font-size: 0.9em;
+		padding: 0.4em 1em;
+	}
+}
+
+/* Feature 2 Enhanced - Service Highlights */
+body.homepage .feature2-enhanced {
+	padding: 3em 0;
+}
+
+body.homepage .service-highlight-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em 1.5em;
+	text-align: center;
+	height: 100%;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	border-top: 4px solid transparent;
+}
+
+body.homepage .service-highlight-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+body.homepage .service-highlight-card.assessment {
+	border-top-color: #5cb85c;
+}
+
+body.homepage .service-highlight-card.training {
+	border-top-color: #f0ad4e;
+}
+
+body.homepage .service-highlight-card.placement {
+	border-top-color: #5bc0de;
+}
+
+body.homepage .service-highlight-card.support {
+	border-top-color: #9b59b6;
+}
+
+body.homepage .service-icon {
+	font-size: 3.5em;
+	margin-bottom: 0.5em;
+}
+
+body.homepage .service-highlight-card.assessment .service-icon {
+	color: #5cb85c;
+}
+
+body.homepage .service-highlight-card.training .service-icon {
+	color: #f0ad4e;
+}
+
+body.homepage .service-highlight-card.placement .service-icon {
+	color: #5bc0de;
+}
+
+body.homepage .service-highlight-card.support .service-icon {
+	color: #9b59b6;
+}
+
+body.homepage .service-highlight-card h3 {
+	font-size: 1.3em;
+	margin-bottom: 0.8em;
+	color: #333;
+}
+
+body.homepage .service-highlight-card p {
+	color: #666;
+	line-height: 1.7;
+	font-size: 0.95em;
+}
+
+@media screen and (max-width: 980px) {
+	body.homepage .service-highlight-card {
+		margin-bottom: 2em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body.homepage .feature2-enhanced {
+		padding: 2em 0;
+	}
+	
+	body.homepage .service-highlight-card {
+		padding: 1.5em 1em;
+	}
+	
+	body.homepage .service-icon {
+		font-size: 3em;
+	}
+}
+
+/* ============================================
+   Director Page Specific Styles
+   Circular photo with hover effect
+   ============================================ */
+body.director-page .director-photo {
+	border-radius: 50%;
+	border: 3px solid #ddd;
+	transition: all 0.3s ease;
+	display: block;
+	width: 100%;
+	height: auto; /* ensure the rendered height respects aspect ratio */
+	aspect-ratio: 1 / 1; /* enforce square aspect on modern browsers */
+	object-fit: cover;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+body.director-page .director-photo:hover {
+	transform: scale(1.05);
+	border-color: #4a9ccf;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   Resources Page Specific Styles
+   Resource cards with hover effects and color coding
+   ============================================ */
+body.resources-page .resource-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+body.resources-page .resource-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+	cursor: pointer;
+}
+
+body.resources-page .resource-card p {
+	color: #555;
+}
+
+body.resources-page .resource-card h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+body.resources-page .resource-card h3::before {
+	content: "→";
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #4a9ccf;
+}
+
+body.resources-page .resource-card:nth-child(odd) {
+	border-left-color: #5cb85c;
+}
+
+body.resources-page .resource-card:nth-child(odd) h3 {
+	color: #5cb85c;
+}
+
+body.resources-page .resource-card:nth-child(odd) h3::before {
+	color: #5cb85c;
+}
+
+body.resources-page .resource-card:nth-child(3n) {
+	border-left-color: #f0ad4e;
+}
+
+body.resources-page .resource-card:nth-child(3n) h3 {
+	color: #f0ad4e;
+}
+
+body.resources-page .resource-card:nth-child(3n) h3::before {
+	color: #f0ad4e;
+}
+
+body.resources-page #sidebar .style2 li {
+	padding: 0.75em 0 0.75em 0.5em;
+	border-bottom: 1px solid #eee;
+	transition: all 0.2s ease;
+}
+
+body.resources-page #sidebar .style2 li:hover {
+	background: #f8f8f8;
+}
+
+body.resources-page #sidebar .style2 a {
+	transition: color 0.2s ease;
+}
+
+body.resources-page #sidebar .style2 a:hover {
+	color: #4a9ccf;
+}
+
+body.resources-page #sidebar header.major {
+	background: linear-gradient(135deg, #4a9ccf 0%, #5cb85c 100%);
+	color: #fff;
+	padding: 1em;
+	border-radius: 4px;
+	margin-bottom: 1em;
+}
+
+body.resources-page #sidebar header.major h2 {
+	color: #fff;
+	margin: 0;
+}
+
+body.resources-page .contact-button-text-full {
+	display: inline;
+}
+
+body.resources-page .contact-button-text-short {
+	display: none;
+}
+
+@media screen and (max-width: 480px) {
+	body.resources-page .contact-button-text-full {
+		display: none;
+	}
+	body.resources-page .contact-button-text-short {
+		display: inline;
+	}
+}
+
+/* ============================================
+   Services Page Specific Styles
+   Service cards with color coding and hover effects
+   ============================================ */
+body.services-page .section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+body.services-page .section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+body.services-page .service-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+}
+
+body.services-page .service-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+body.services-page .service-card h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	font-size: 1.5em;
+}
+
+body.services-page .service-card h4 {
+	color: #333;
+	margin: 1.5em 0 0.75em 0;
+	font-size: 1.15em;
+}
+
+body.services-page .service-card p {
+	color: #555;
+	margin: 0.5em 0;
+	line-height: 1.7;
+}
+
+body.services-page .service-card ul {
+	margin: 0.75em 0;
+	padding-left: 1.5em;
+}
+
+body.services-page .service-card ul li {
+	color: #555;
+	margin: 0.5em 0;
+	line-height: 1.6;
+}
+
+/* Color variations for different service categories */
+body.services-page .service-card.heating {
+	border-left-color: #e74c3c;
+}
+
+body.services-page .service-card.heating h3 {
+	color: #e74c3c;
+}
+
+body.services-page .service-card.cooling {
+	border-left-color: #3498db;
+}
+
+body.services-page .service-card.cooling h3 {
+	color: #3498db;
+}
+
+body.services-page .service-card.fireplace {
+	border-left-color: #27ae60;
+}
+
+body.services-page .service-card.fireplace h3 {
+	color: #27ae60;
+}
+
+body.services-page .service-card.installation {
+	border-left-color: #9b59b6;
+}
+
+body.services-page .service-card.installation h3 {
+	color: #9b59b6;
+}
+
+/* ============================================
+   Quality Page Specific Styles
+   Feature cards highlighting why to choose Choice Services
+   ============================================ */
+body.quality-page .section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+body.quality-page .section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+body.quality-page .quality-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+}
+
+body.quality-page .quality-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+body.quality-page .quality-card h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+body.quality-page .quality-card > p {
+	color: #555;
+	margin: 0.5em 0 1em 0;
+	line-height: 1.7;
+	font-size: 1.05em;
+}
+
+body.quality-page .quality-card ul {
+	margin: 0.75em 0;
+	padding-left: 1.5em;
+}
+
+body.quality-page .quality-card ul li {
+	color: #555;
+	margin: 0.5em 0;
+	line-height: 1.6;
+}
+
+body.quality-page .quality-card ul li strong {
+	color: #333;
+}
+
+/* Color variations for different quality categories */
+body.quality-page .quality-card.expertise {
+	border-left-color: #5cb85c;
+}
+
+body.quality-page .quality-card.expertise h3 {
+	color: #5cb85c;
+}
+
+body.quality-page .quality-card.responsive {
+	border-left-color: #f0ad4e;
+}
+
+body.quality-page .quality-card.responsive h3 {
+	color: #f0ad4e;
+}
+
+body.quality-page .quality-card.results {
+	border-left-color: #d9534f;
+}
+
+body.quality-page .quality-card.results h3 {
+	color: #d9534f;
+}
+
+body.quality-page .quality-card.community {
+	border-left-color: #5bc0de;
+}
+
+body.quality-page .quality-card.community h3 {
+	color: #5bc0de;
+}
+
+body.quality-page .quality-card.values {
+	border-left-color: #e74c3c;
+}
+
+body.quality-page .quality-card.values h3 {
+	color: #e74c3c;
+}
+
+body.quality-page .quality-card.comprehensive {
+	border-left-color: #9b59b6;
+}
+
+body.quality-page .quality-card.comprehensive h3 {
+	color: #9b59b6;
+}
+
+/* ============================================
+   History Page Specific Styles
+   Timeline layout with milestone cards
+   ============================================ */
+body.history-page .section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+body.history-page .section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+body.history-page .timeline-item {
+	position: relative;
+	padding-left: 140px;
+	margin-bottom: 3em;
+	min-height: 100px;
+}
+
+body.history-page .timeline-item::before {
+	content: "";
+	position: absolute;
+	left: 60px;
+	top: 40px;
+	bottom: -3em;
+	width: 3px;
+	background: linear-gradient(to bottom, #4a9ccf 0%, #5cb85c 100%);
+}
+
+body.history-page .timeline-item:last-of-type::before {
+	display: none;
+}
+
+body.history-page .timeline-marker {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 120px;
+	height: 80px;
+	background: linear-gradient(135deg, #4a9ccf 0%, #5cb85c 100%);
+	color: #fff;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	z-index: 10;
+}
+
+body.history-page .timeline-content {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+}
+
+body.history-page .timeline-content:hover {
+	transform: translateX(5px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+body.history-page .timeline-content h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
+body.history-page .timeline-content p {
+	color: #555;
+	line-height: 1.7;
+	margin: 0.75em 0;
+}
+
+body.history-page .timeline-content p strong {
+	color: #333;
+}
+
+/* Color variations for timeline items */
+body.history-page .timeline-item.founding .timeline-marker {
+	background: linear-gradient(135deg, #5cb85c 0%, #4caf50 100%);
+}
+
+body.history-page .timeline-item.founding .timeline-content {
+	border-left-color: #5cb85c;
+}
+
+body.history-page .timeline-item.founding .timeline-content h3 {
+	color: #5cb85c;
+}
+
+body.history-page .timeline-item.growth .timeline-marker {
+	background: linear-gradient(135deg, #f0ad4e 0%, #ff9800 100%);
+}
+
+body.history-page .timeline-item.growth .timeline-content {
+	border-left-color: #f0ad4e;
+}
+
+body.history-page .timeline-item.growth .timeline-content h3 {
+	color: #f0ad4e;
+}
+
+body.history-page .timeline-item.recognition .timeline-marker {
+	background: linear-gradient(135deg, #d9534f 0%, #f44336 100%);
+}
+
+body.history-page .timeline-item.recognition .timeline-content {
+	border-left-color: #d9534f;
+}
+
+body.history-page .timeline-item.recognition .timeline-content h3 {
+	color: #d9534f;
+}
+
+body.history-page .timeline-item.family .timeline-marker {
+	background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+body.history-page .timeline-item.family .timeline-content {
+	border-left-color: #e74c3c;
+}
+
+body.history-page .timeline-item.family .timeline-content h3 {
+	color: #e74c3c;
+}
+
+body.history-page .timeline-item.today .timeline-marker {
+	background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+body.history-page .timeline-item.today .timeline-content {
+	border-left-color: #9b59b6;
+}
+
+body.history-page .timeline-item.today .timeline-content h3 {
+	color: #9b59b6;
+}
+
+@media screen and (max-width: 736px) {
+	body.history-page .timeline-item {
+		padding-left: 30px;
+		padding-top: 100px;
+		position: relative;
+	}
+
+	body.history-page .timeline-item::before {
+		left: 10px;
+		margin-left: 0;
+		top: 40px;
+		bottom: -100px;
+	}
+
+	body.history-page .timeline-item:last-of-type::before {
+		display: none;
+	}
+
+	body.history-page .timeline-item::after {
+		content: "";
+		position: absolute;
+		left: 10px;
+		top: 40px;
+		width: calc(50% - 70px);
+		height: 3px;
+		background: linear-gradient(to right, #4a9ccf 0%, #5cb85c 100%);
+	}
+
+	body.history-page .timeline-marker {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+	}
+
+	body.history-page .timeline-content {
+		margin-left: 0;
+	}
+
+	body.history-page .timeline-content:hover {
+		transform: translateY(-3px);
+	}
+}
+
+/* ============================================
+   Employment Page Specific Styles
+   Cards for careers and application information
+   ============================================ */
+body.employment-page .section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+body.employment-page .section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+body.employment-page .employment-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+}
+
+body.employment-page .employment-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+body.employment-page .employment-card h3 {
+	color: #4a9ccf;
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
+body.employment-page .employment-card h4 {
+	color: #333;
+	margin: 1.5em 0 0.75em 0;
+	font-size: 1.15em;
+}
+
+body.employment-page .employment-card > p {
+	color: #555;
+	margin: 0.5em 0 1em 0;
+	line-height: 1.7;
+}
+
+body.employment-page .employment-card ul {
+	margin: 0.75em 0;
+	padding-left: 1.5em;
+}
+
+body.employment-page .employment-card ul li {
+	color: #555;
+	margin: 0.5em 0;
+	line-height: 1.6;
+}
+
+body.employment-page .employment-card ul li strong {
+	color: #333;
+}
+
+/* Color variations for employment sections */
+body.employment-page .employment-card.culture {
+	border-left-color: #5cb85c;
+}
+
+body.employment-page .employment-card.culture h3 {
+	color: #5cb85c;
+}
+
+body.employment-page .employment-card.qualifications {
+	border-left-color: #f0ad4e;
+}
+
+body.employment-page .employment-card.qualifications h3 {
+	color: #f0ad4e;
+}
+
+body.employment-page .employment-card.application {
+	border-left-color: #5bc0de;
+}
+
+body.employment-page .employment-card.application h3 {
+	color: #5bc0de;
+}
+
+/* Contact cards within employment page */
+body.employment-page .contact-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5em;
+	margin-top: 1.5em;
+}
+
+body.employment-page .contact-card {
+	background: #f8f8f8;
+	border-radius: 8px;
+	padding: 1.5em;
+	border: 2px solid #e0e0e0;
+	transition: all 0.3s ease;
+}
+
+body.employment-page .contact-card:hover {
+	border-color: #5bc0de;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.employment-page .contact-card h4 {
+	color: #5bc0de;
+	margin: 0 0 1em 0;
+	font-size: 1.1em;
+}
+
+body.employment-page .contact-card .contact-name {
+	margin: 0.5em 0;
+	color: #333;
+	line-height: 1.5;
+}
+
+body.employment-page .contact-card .contact-email {
+	margin: 1em 0 0 0;
+}
+
+body.employment-page .contact-card .contact-email .button {
+	width: 100%;
+	font-size: 0.85em;
+	padding: 0.75em 1em;
+	background: #5bc0de;
+	border: none;
+	word-break: break-all;
+}
+
+body.employment-page .contact-card .contact-email .button:hover {
+	background: #46b8da;
+}
+
+/* ============================================
+   Contact Page Specific Styles
+   Regional contact cards and services overview
+   ============================================ */
+body.contact-page .section-intro {
+	background: linear-gradient(135deg, #0395f0 0%, #235368 100%);
+	color: #fff;
+	padding: 2em;
+	border-radius: 8px;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+body.contact-page .section-intro p {
+	color: #fff;
+	margin: 0;
+	font-size: 1.1em;
+}
+
+body.contact-page .contact-regions-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2em;
+	margin-bottom: 3em;
+}
+
+@media screen and (max-width: 980px) {
+	body.contact-page .contact-regions-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5em;
+	}
+}
+
+body.contact-page .contact-card-main {
+	background: #fff;
+	border-radius: 8px;
+	padding: 2em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-left: 4px solid #4a9ccf;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+body.contact-page .contact-card-main:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	border-left-width: 6px;
+}
+
+body.contact-page .contact-card-main h3 {
+	color: #4a9ccf;
+	margin: 0 0 0.5em 0;
+	font-size: 1.5em;
+}
+
+body.contact-page .contact-card-main h4 {
+	color: #333;
+	margin: 0 0 0.75em 0;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+body.contact-page .contact-card-main .region-description {
+	color: #555;
+	margin: 0 0 1.5em 0;
+	line-height: 1.7;
+}
+
+body.contact-page .contact-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+	margin-top: auto;
+	padding-top: 1em;
+}
+
+body.contact-page .contact-actions .button {
+	margin: 0;
+	padding: 0.85em 1.2em;
+	font-size: 0.85em;
+	text-align: center;
+}
+
+/* Color variations for contact regions */
+body.contact-page .contact-card-main.northern {
+	border-left-color: #5cb85c;
+}
+
+body.contact-page .contact-card-main.northern h3 {
+	color: #5cb85c;
+}
+
+body.contact-page .contact-card-main.northern .button {
+	background: #5cb85c;
+}
+
+body.contact-page .contact-card-main.northern .button:hover {
+	background: #4cae4c;
+}
+
+body.contact-page .contact-card-main.central {
+	border-left-color: #5bc0de;
+}
+
+body.contact-page .contact-card-main.central h3 {
+	color: #5bc0de;
+}
+
+body.contact-page .contact-card-main.central .button {
+	background: #5bc0de;
+}
+
+body.contact-page .contact-card-main.central .button:hover {
+	background: #46b8da;
+}
+
+body.contact-page .contact-card-main.dspd {
+	border-left-color: #9b59b6;
+}
+
+body.contact-page .contact-card-main.dspd h3 {
+	color: #9b59b6;
+}
+
+body.contact-page .contact-card-main.dspd .button {
+	background: #9b59b6;
+}
+
+body.contact-page .contact-card-main.dspd .button:hover {
+	background: #8e44ad;
+}
+
+/* Services Overview Section */
+body.contact-page .services-overview {
+	background: #f8f9fa;
+	border-radius: 8px;
+	padding: 2em;
+	margin-top: 3em;
+}
+
+body.contact-page .services-overview h3 {
+	color: #333;
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
+body.contact-page .services-overview > p {
+	color: #555;
+	margin-bottom: 1.5em;
+	line-height: 1.7;
+}
+
+body.contact-page .services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 1.5em;
+	margin-top: 1.5em;
+}
+
+body.contact-page .service-highlight {
+	background: #fff;
+	padding: 1.5em 1em;
+	border-radius: 8px;
+	text-align: center;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+	transition: all 0.3s ease;
+}
+
+body.contact-page .service-highlight:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body.contact-page .service-highlight .service-icon {
+	display: block;
+	font-size: 2.5em;
+	margin-bottom: 0.3em;
+}
+
+body.contact-page .service-highlight strong {
+	display: block;
+	color: #333;
+	margin-bottom: 0.5em;
+	font-size: 1em;
+}
+
+body.contact-page .service-highlight p {
+	color: #666;
+	margin: 0;
+	font-size: 0.85em;
+	line-height: 1.4;
+}
+
+@media screen and (max-width: 736px) {
+	body.contact-page .services-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	body.contact-page .contact-actions {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ============================================
+   Footer Logo Styling
+   Consolidates inline styles for footer logo images
+   ============================================ */
+.footer-logo {
+	max-width: 250px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* ============================================
+   Footer Copyright Section Styling
+   Responsive layout for copyright section
+   ============================================ */
+#copyright > div:nth-child(2) {
+	text-align: center;
+	flex: 1;
+}
+
+#copyright > div:nth-child(2) p {
+	margin: 0;
+	color: #999;
+}
+
+#copyright > div:nth-child(3) {
+	text-align: right;
+}
+
+#copyright > div:nth-child(3) p {
+	margin: 0;
+}
+
+/* Article footer styling */
+article > footer {
+	margin-top: 2em;
+}
+
+/* ============================================
+   Staff Page Specific Styles
+   Grid layout with interactive bio cards
+   ============================================ */
+body.staff-page #header-wrapper {
+	position: relative;
+	z-index: 1000;
+}
+
+body.staff-page #header-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('../../images/site_images/hero-collaboration.jpg');
+	background-size: cover;
+	background-position: center;
+	filter: blur(3px);
+	opacity: 0.35;
+	z-index: 0;
+	pointer-events: none;
+}
+
+body.staff-page #header-wrapper .container {
+	position: relative;
+	z-index: 1;
+}
+
+body.staff-page #main-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+body.staff-page .staff-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2em;
+	margin: 2em 0;
+}
+
+@media screen and (max-width: 980px) {
+	body.staff-page .staff-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body.staff-page .staff-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+body.staff-page .team-member {
+	position: relative;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	transition: box-shadow 0.3s ease;
+	background: #fff;
+}
+
+body.staff-page .team-member:hover {
+	box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+body.staff-page .team-member-toggle {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	text-align: left;
+	border-radius: 4px 4px 0 0;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+
+body.staff-page .team-member-toggle:focus-visible {
+	outline: 3px solid #4a9ccf;
+	outline-offset: 2px;
+}
+
+body.staff-page .team-member-toggle img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+body.staff-page .team-member .details {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);
+	color: #fff;
+	padding: 1.5em 1em 1em 1em;
+}
+
+body.staff-page .team-member h4 {
+	margin: 0 0 0.35em 0;
+	color: #fff;
+	font-size: 1.05em;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+body.staff-page .team-member h6 {
+	margin: 0;
+	color: #ddd;
+	font-size: 0.8em;
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.3;
+	white-space: normal;
+}
+
+body.staff-page .team-member .bio {
+	background: #f8f8f8;
+	color: #555;
+	font-size: 0.85em;
+	line-height: 1.6;
+	padding: 0 1em;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+	border-radius: 0 0 4px 4px;
+}
+
+body.staff-page .team-member.is-open .bio {
+	max-height: 800px;
+	opacity: 1;
+	padding: 1.5em 1em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	body.staff-page .team-member:hover .bio {
+		max-height: 800px;
+		opacity: 1;
+		padding: 1.5em 1em;
+	}
+}
+
+@media (hover: none), (pointer: coarse) {
+	body.staff-page .team-member-toggle {
+		cursor: default;
+	}
+
+	body.staff-page .team-member .bio {
+		max-height: none;
+		opacity: 1;
+		padding: 1.5em 1em;
+		overflow: visible;
+	}
+}
+
+/* ============================================
+   Testimonial Card Styles
+   Customer reviews section on homepage
+   ============================================ */
+.testimonial-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 1.5em;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.testimonial-card .stars {
+	color: #f39c12;
+	margin-bottom: 0.5em;
+}
+
+.testimonial-card .review-text {
+	font-style: italic;
+	color: #555;
+	margin-bottom: 1em;
+	line-height: 1.6;
+}
+
+.testimonial-card .reviewer {
+	font-weight: bold;
+	color: #333;
+}
+
+/* Footer link styles */
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-links li {
+	margin: 0.5em 0;
+}
+
+.footer-links a {
+	color: #999;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+#footer .social a {
+	color: #999;
+	transition: color 0.2s ease;
+}
+
+#footer .social a:hover {
+	color: #3b5998;
+}
